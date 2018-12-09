@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Spirit</string>
+    <string name="username_email">Username / Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="new_account">Don\'t Have Account?</string>
+    <string name="register">Register</string>
+</resources>

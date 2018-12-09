@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#152c38</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="splashScreenBackgroung">#152c38</color>
+    <color name="loginButton">#01bebb</color>
+
+
+
+</resources>

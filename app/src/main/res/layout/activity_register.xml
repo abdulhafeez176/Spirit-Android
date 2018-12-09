@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splashScreenBackgroung"
+    tools:context=".LoginAndRegistration.LoginActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="143dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginLeft="121dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/newlogo4"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/loginScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:orientation="vertical"
+
+        >
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/reg_email_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="USERNAME"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:inputType="text"
+                android:textColor="#ffffff" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:hintAnimationEnabled="false"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/reg_pass_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PASSWORD"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:inputType="textPassword"
+                android:textColor="#ffffff" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:hintAnimationEnabled="false"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/reg_confirm_pass_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PASSWORD"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:inputType="textPassword"
+                android:textColor="#ffffff" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/reg_button_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/loginButton"
+            android:text="REGISTER"
+            android:textColor="#ffffff" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="bottom"
+        android:text="Already have Account?"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/reg_button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/textView2"
+        android:gravity="bottom"
+        android:text="Login"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:title="Teams"
+        android:id="@+id/nav_menu_teams"
+        android:orderInCategory="1"
+        android:icon="@drawable/teams"/>
+
+    <item
+        android:title="Matches"
+        android:id="@+id/nav_menu_matches"
+        android:orderInCategory="2"
+        android:icon="@drawable/matches1"/>
+
+
+    <item
+        android:title="Profile"
+        android:id="@+id/nav_menu_profile"
+        android:orderInCategory="3"
+        android:icon="@drawable/profile"/>
+
+
+
+</menu>
