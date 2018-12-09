@@ -23,7 +23,6 @@
         <activity android:name=".Modules.MainActivity" />
         <activity android:name=".LoginAndRegistration.LoginActivity" />
         <activity android:name=".LoginAndRegistration.RegisterActivity" />
-        <activity android:name=".LoginAndRegistration.ProfileActivity"></activity>
     </application>
 
 </manifest>
