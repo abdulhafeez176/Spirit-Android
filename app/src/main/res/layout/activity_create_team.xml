@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginAndRegistration.LoginActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <TextView
+        android:background="@color/splashScreenBackgroung"
+        android:id = "@+id/topText"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Team"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="40sp"/>
+
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topText">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/loginScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/loginScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/new_team_name"
+                style="@style/loginScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/baseline_assignment_ind_black_18dp"
+
+                android:drawableLeft="@mipmap/baseline_assignment_ind_black_18dp"
+                android:drawablePadding="5dp"
+                android:hint="Team Name"
+                android:textColorHint="@color/splashScreenBackgroung"
+                android:inputType="text"
+                android:textColor="#000000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/loginScreen"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/new_team_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/loginScreen"
+
+                android:hint="Contact"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/baseline_call_black_18dp"
+                android:drawableStart="@mipmap/baseline_call_black_18dp"
+                android:inputType="number"
+                android:textColorHint="@color/splashScreenBackgroung"
+                android:textColor="#000000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/loginScreen"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/new_team_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/loginScreen"
+
+                android:hint="Email"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/baseline_alternate_email_black_18dp"
+                android:drawableStart="@mipmap/baseline_alternate_email_black_18dp"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/splashScreenBackgroung"
+                android:textColor="#000000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/loginScreen"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/new_team_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/loginScreen"
+
+                android:hint="Location"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/baseline_map_black_18dp"
+                android:drawableStart="@mipmap/baseline_map_black_18dp"
+                android:inputType="text"
+                android:textColorHint="@color/splashScreenBackgroung"
+                android:textColor="#000000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/loginScreen"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/new_team_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/loginScreen"
+
+                android:hint="Address"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/baseline_add_location_black_18dp"
+                android:drawableStart="@mipmap/baseline_add_location_black_18dp"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/splashScreenBackgroung"
+                android:textColor="#000000" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/loginScreen"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/new_team_member"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/loginScreen"
+
+                android:hint="Email"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@mipmap/baseline_alternate_email_black_18dp"
+                android:drawableStart="@mipmap/baseline_alternate_email_black_18dp"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/splashScreenBackgroung"
+                android:textColor="#000000" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/addMemberButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/loginButton"
+            android:text="Add Member"
+            android:textColor="#ffffff" />
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/createTeamButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/loginButton"
+            android:text="Create Team"
+            android:textColor="#ffffff" />
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>
