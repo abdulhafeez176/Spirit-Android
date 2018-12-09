@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gotoLogPage = new Intent(RegisterActivity.this,LoginActivity.class);
                 startActivity(gotoLogPage);
-
+                finish();
             }
         });
 
@@ -77,51 +77,64 @@ public class RegisterActivity extends AppCompatActivity {
         final String username = reg_username.getText().toString().trim();
         final String password = reg_password.getText().toString().trim();
 
-        if(password.equals(confirmPass)){
-            progressDialog.setMessage("Registering user...");
-            progressDialog.show();
+        if (!confirmPass.isEmpty() && !username.isEmpty() && !password.isEmpty()){
 
-            StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                    Constants.REGISTER_URL,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            progressDialog.dismiss();
+            if(password.equals(confirmPass)){
+                progressDialog.setMessage("Registering user...");
+                progressDialog.show();
 
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
+                StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                        Constants.REGISTER_URL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                progressDialog.dismiss();
 
-                                Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response);
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                    Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            progressDialog.hide();
-                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("username", username);
-                    params.put("password", password);
-                    return params;
-                }
-            };
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                progressDialog.hide();
+                                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("username", username);
+                        params.put("password", password);
+                        return params;
+                    }
+                };
 
 
-            Requesthandler.getInstance(this).addToRequestQueue(stringRequest);
+                Requesthandler.getInstance(this).addToRequestQueue(stringRequest);
 
+
+            }else {
+                Toast.makeText(getApplicationContext(), "Passwords do not match.", Toast.LENGTH_LONG).show();
+
+            }
 
         }else {
-            Toast.makeText(getApplicationContext(), "Passwords do not match.", Toast.LENGTH_LONG).show();
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Enter credentials",
+                    Toast.LENGTH_LONG
+            ).show();
 
         }
+
+
 
 
 

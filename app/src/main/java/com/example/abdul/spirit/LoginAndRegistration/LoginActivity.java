@@ -68,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gotoRegpage = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(gotoRegpage);
+                finish();
             }
         });
 
@@ -87,62 +88,73 @@ public class LoginActivity extends AppCompatActivity {
         final String username = login_username.getText().toString().trim();
         final String password = login_password.getText().toString().trim();
 
-        dialog.setMessage("Logging in");
-        dialog.show();
+        if (!username.isEmpty() && !password.isEmpty()){
+            dialog.setMessage("Logging in");
+            dialog.show();
 
-        StringRequest stringRequest = new StringRequest(
-                Request.Method.POST,
-                Constants.LOGIN_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        dialog.dismiss();
-                        try {
-                            JSONObject obj = new JSONObject(response);
-                            if(!obj.getBoolean("error")){
-                                SharedPrefManager.getInstance(getApplicationContext())
-                                        .userLogin(
-                                                obj.getInt("id"),
-                                                obj.getString("username")
-                                        );
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                finish();
-                            }else{
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "Could not login",
-                                        Toast.LENGTH_LONG
-                                ).show();
+            StringRequest stringRequest = new StringRequest(
+                    Request.Method.POST,
+                    Constants.LOGIN_URL,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            dialog.dismiss();
+                            try {
+                                JSONObject obj = new JSONObject(response);
+                                if(!obj.getBoolean("error")){
+                                    SharedPrefManager.getInstance(getApplicationContext())
+                                            .userLogin(
+                                                    obj.getInt("id"),
+                                                    obj.getString("username")
+                                            );
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    finish();
+                                }else{
+                                    Toast.makeText(
+                                            getApplicationContext(),
+                                            "Could not login",
+                                            Toast.LENGTH_LONG
+                                    ).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            dialog.dismiss();
+
+                            Toast.makeText(
+                                    getApplicationContext(),
+                                    "Could Not Login 1",
+                                    Toast.LENGTH_LONG
+                            ).show();
                         }
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        dialog.dismiss();
-
-                        Toast.makeText(
-                                getApplicationContext(),
-                                "Could Not Login 1",
-                                Toast.LENGTH_LONG
-                        ).show();
-                    }
+            ){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("username", username);
+                    params.put("password", password);
+                    return params;
                 }
-        ){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("username", username);
-                params.put("password", password);
-                return params;
-            }
 
-        };
+            };
 
-        Requesthandler.getInstance(this).addToRequestQueue(stringRequest);
-    }
+            Requesthandler.getInstance(this).addToRequestQueue(stringRequest);
+        }else {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Enter credentials",
+                    Toast.LENGTH_LONG
+            ).show();
+
+        }
+        }
+
+
 
 }
