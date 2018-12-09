@@ -5,6 +5,10 @@
     <color name="colorAccent">#ffffff</color>
     <color name="splashScreenBackgroung">#152c38</color>
     <color name="loginButton">#01bebb</color>
+    <color name="profilePrimarty">#ea351538</color>
+    <color name="profilePrimartyDark">#ea213815</color>
+    <color name="profileAccent">#ea382815</color>
+
 
 
 

@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.abdul.spirit.Fragments.MatchesFragment;
+import com.example.abdul.spirit.Fragments.ProfileFragment;
 import com.example.abdul.spirit.Fragments.TeamsFragment;
 import com.example.abdul.spirit.R;
 import com.example.abdul.spirit.Utils.BottomNavigationBehavior;
@@ -60,14 +61,17 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.nav_menu_matches:
                     fragment = new MatchesFragment();
+                    getSupportActionBar().setTitle("Matches");
                     loadFragment(fragment);
-                    return true;
-                case R.id.nav_menu_profile:
-                    //fragment = new P();
-                    //loadFragment(fragment);
                     return true;
                 case R.id.nav_menu_teams:
                     fragment = new TeamsFragment();
+                    getSupportActionBar().setTitle("Teams");
+                    loadFragment(fragment);
+                    return true;
+                case R.id.nav_menu_profile:
+                    fragment = new ProfileFragment();
+                    getSupportActionBar().setTitle("Profile");
                     loadFragment(fragment);
                     return true;
 

@@ -20,6 +20,14 @@
     </style>
 
 
+    <style name="profileFragmentStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/profilePrimarty</item>
+        <item name="colorPrimaryDark">@color/profilePrimartyDark</item>
+        <item name="colorAccent">@color/profileAccent</item>
+    </style>
+
+
 
 
 </resources>
