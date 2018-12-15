@@ -4,6 +4,10 @@ public class AddPlayer {
     private String name;
     private String userName;
 
+    public AddPlayer(String a, String b){
+        name = a;
+        userName = b;
+    }
 
     public String getName() {
         return name;

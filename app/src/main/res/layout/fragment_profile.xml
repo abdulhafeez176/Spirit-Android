@@ -309,7 +309,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/appCompatButton2"
+        app:layout_constraintBottom_toTopOf="@+id/registerNewTeamButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -318,7 +318,7 @@
     </android.support.v7.widget.RecyclerView>
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/appCompatButton2"
+        android:id="@+id/registerNewTeamButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#0a9be9"
