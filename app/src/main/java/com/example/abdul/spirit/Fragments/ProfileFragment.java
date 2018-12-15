@@ -57,9 +57,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        btn = (AppCompatButton)view.findViewById(R.id.button_logout);
-        btn.setOnClickListener(this);
+        View view = inflater.inflate(R.layout.constraint_test, container, false);
 
         return view;
 
