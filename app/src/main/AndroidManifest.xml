@@ -24,7 +24,8 @@
         <activity android:name=".LoginAndRegistration.LoginActivity" />
         <activity android:name=".LoginAndRegistration.RegisterActivity" />
         <activity android:name=".CreateTeam.MyTeam" />
-        <activity android:name=".CreateTeam.CreateTeam"></activity>
+        <activity android:name=".CreateTeam.CreateTeam" />
+        <activity android:name=".CreateTeam.AddPlayerActivity"></activity>
     </application>
 
 </manifest>
