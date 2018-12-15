@@ -14,6 +14,8 @@ public class SharedPrefManager {
     public static final String SHARED_PREF_NAME = "spiritSharedPrefs";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_ID = "userid";
+    public static final String KEY_NAME = "name";
+    public static final String KEY_OWNER = "owner";
 
 
     private SharedPrefManager(Context context) {
@@ -29,12 +31,14 @@ public class SharedPrefManager {
         return mInstance;
     }
 
-    public boolean userLogin(int id,String username){
+    public boolean userLogin(int id,String username,String name,int owner){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putInt(KEY_ID,id);
         editor.putString(KEY_USERNAME,username);
+        editor.putString(KEY_NAME,name);
+        editor.putInt(KEY_OWNER,owner);
         editor.apply();
 
         return true;
@@ -60,6 +64,11 @@ public class SharedPrefManager {
     public String getUsername(){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USERNAME, null);
+    }
+
+    public String getNameOfUser(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_NAME,"NAME");
     }
 
 

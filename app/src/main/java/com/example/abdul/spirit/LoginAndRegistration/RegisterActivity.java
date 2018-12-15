@@ -29,7 +29,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     // activity vars
-    private AppCompatEditText reg_username,reg_password,reg_conf_pass;
+    private AppCompatEditText reg_username,reg_password,reg_conf_pass,reg_name;
     private AppCompatButton reg_btn_reg;
     private TextView reg_button_log;
     private ProgressDialog progressDialog;
@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
         reg_conf_pass = (AppCompatEditText)findViewById(R.id.reg_confirm_pass_edit);
         reg_btn_reg = (AppCompatButton)findViewById(R.id.reg_button_register);
         reg_button_log = (TextView)findViewById(R.id.reg_button_login);
+        reg_name = (AppCompatEditText)findViewById(R.id.reg_name_edit);
         progressDialog = new ProgressDialog(this);
 
         reg_button_log.setOnClickListener(new View.OnClickListener() {
@@ -76,8 +77,10 @@ public class RegisterActivity extends AppCompatActivity {
         final String confirmPass = reg_conf_pass.getText().toString().trim();
         final String username = reg_username.getText().toString().trim();
         final String password = reg_password.getText().toString().trim();
+        final String name = reg_name.getText().toString().trim();
 
-        if (!confirmPass.isEmpty() && !username.isEmpty() && !password.isEmpty()){
+
+        if (!confirmPass.isEmpty() && !username.isEmpty() && !password.isEmpty() && !name.isEmpty()){
 
             if(password.equals(confirmPass)){
                 progressDialog.setMessage("Registering user...");
@@ -112,6 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Map<String, String> params = new HashMap<>();
                         params.put("username", username);
                         params.put("password", password);
+                        params.put("name",name);
                         return params;
                     }
                 };

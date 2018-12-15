@@ -9,10 +9,12 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.abdul.spirit.LoginAndRegistration.LoginActivity;
 import com.example.abdul.spirit.LoginAndRegistration.RegisterActivity;
+import com.example.abdul.spirit.Modules.MainActivity;
 import com.example.abdul.spirit.R;
 import com.example.abdul.spirit.Utils.SharedPrefManager;
 
@@ -27,6 +29,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private String mParam1;
     private String mParam2;
     private AppCompatButton btn;
+    private String name_of_user;
+    private TextView name_user;
 
 
     public ProfileFragment() {
@@ -50,6 +54,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        if (SharedPrefManager.getInstance(getContext()).isLoggedIn()){
+            name_of_user = SharedPrefManager.getInstance(getContext()).getNameOfUser();
+
+        }
     }
 
     @Override
@@ -58,6 +67,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        name_user = view.findViewById(R.id.name_user_view);
+        name_user.setText(name_of_user);
 
         return view;
 

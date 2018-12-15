@@ -20,12 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Modules.MainActivity" />
-        <activity android:name=".LoginAndRegistration.LoginActivity" />
-        <activity android:name=".LoginAndRegistration.RegisterActivity" />
-        <activity android:name=".CreateTeam.MyTeam" />
-        <activity android:name=".CreateTeam.CreateTeam" />
-        <activity android:name=".CreateTeam.AddPlayerActivity"></activity>
+        <activity android:name=".Modules.MainActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".LoginAndRegistration.LoginActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".LoginAndRegistration.RegisterActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".CreateTeam.MyTeam"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".CreateTeam.CreateTeam"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".CreateTeam.AddPlayerActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

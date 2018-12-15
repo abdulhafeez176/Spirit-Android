@@ -105,7 +105,9 @@ public class LoginActivity extends AppCompatActivity {
                                     SharedPrefManager.getInstance(getApplicationContext())
                                             .userLogin(
                                                     obj.getInt("id"),
-                                                    obj.getString("username")
+                                                    obj.getString("username"),
+                                                    obj.getString("name"),
+                                                    obj.getInt("teamowner")
                                             );
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     finish();
