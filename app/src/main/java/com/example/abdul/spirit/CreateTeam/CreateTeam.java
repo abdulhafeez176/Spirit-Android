@@ -13,9 +13,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.example.abdul.spirit.R;
+import com.example.abdul.spirit.Utils.Constants;
 import com.example.abdul.spirit.Utils.SinglePlayerViewItemAdapter;
 
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ public class CreateTeam extends AppCompatActivity {
     private AppCompatEditText teamEmailView;
     private AppCompatEditText teamLocationView;
     private AppCompatEditText teamAddressView;
+    private int teamMemberCount;
 
     private SinglePlayerViewItemAdapter addPlayersAdapter;
 
@@ -56,11 +59,24 @@ public class CreateTeam extends AppCompatActivity {
         addPlayersListView.setAdapter(addPlayersAdapter);
 
 
+
+        AddPlayer player = new AddPlayer(Constants.name,Constants.userName);
+        addPlayersAdapter.add(player);
+        Constants.teamMembers +=1;
+
+
         addMemberButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),AddPlayerActivity.class);
-                startActivityForResult(i,0);
+
+                if (Constants.teamMembers < 15) {
+                    Intent i = new Intent(getApplicationContext(),AddPlayerActivity.class);
+                    startActivityForResult(i,0);
+
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"You cannot add more than 15 players",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -80,12 +96,18 @@ public class CreateTeam extends AppCompatActivity {
                 String username = data.getStringExtra("username");
                 AddPlayer player = new AddPlayer(name,username);
                 addPlayersAdapter.add(player);
-
+                Constants.teamMembers +=1;
 
             } else if (resultCode == Activity.RESULT_CANCELED) {
 
             }
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Constants.teamMembers = 0;
+        super.onBackPressed();
     }
 }

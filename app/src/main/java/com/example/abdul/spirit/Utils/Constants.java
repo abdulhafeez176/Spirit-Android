@@ -6,4 +6,9 @@ public class Constants {
     public static final String REGISTER_URL = ROOT_URL + "registerUser.php";
     public static final String LOGIN_URL = ROOT_URL + "loginUser.php";
     public static final String GET_UPCOMING_MATCHES_URL = ROOT_URL + "getUpcomingMatches.php";
+
+
+    public static int teamMembers;
+    public static String name;
+    public static String userName;
 }

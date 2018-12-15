@@ -21,6 +21,7 @@ import com.example.abdul.spirit.LoginAndRegistration.LoginActivity;
 import com.example.abdul.spirit.LoginAndRegistration.RegisterActivity;
 import com.example.abdul.spirit.Modules.MainActivity;
 import com.example.abdul.spirit.R;
+import com.example.abdul.spirit.Utils.Constants;
 import com.example.abdul.spirit.Utils.SharedPrefManager;
 
 
@@ -72,6 +73,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             username_of_user = SharedPrefManager.getInstance(getContext()).getUsername();
             contact_of_user = SharedPrefManager.getInstance(getContext()).getUserContact();
             isOwner = SharedPrefManager.getInstance(getContext()).userHasTeam();
+
+            Constants.name = name_of_user;
+            Constants.userName = username_of_user;
 
 
 
