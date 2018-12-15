@@ -55,7 +55,7 @@ public class SinglePlayerViewItemAdapter extends ArrayAdapter<AddPlayer> {
                 @Override
                 public void onClick(View v) {
                     SinglePlayerViewItemAdapter.this.remove(getItem(position));
-                    Constants.teamMembers -= 1;
+                    Constants.cteamMembers -= 1;
                 }
             });
 

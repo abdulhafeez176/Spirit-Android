@@ -8,7 +8,8 @@ public class Constants {
     public static final String GET_UPCOMING_MATCHES_URL = ROOT_URL + "getUpcomingMatches.php";
 
 
-    public static int teamMembers;
+    public static int cteamMembers;
+    public static int mteamMembers;
     public static String name;
     public static String userName;
 }

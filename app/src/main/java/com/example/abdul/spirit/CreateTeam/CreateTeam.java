@@ -62,14 +62,14 @@ public class CreateTeam extends AppCompatActivity {
 
         AddPlayer player = new AddPlayer(Constants.name,Constants.userName);
         addPlayersAdapter.add(player);
-        Constants.teamMembers +=1;
+        Constants.cteamMembers +=1;
 
 
         addMemberButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (Constants.teamMembers < 15) {
+                if (Constants.cteamMembers < 15) {
                     Intent i = new Intent(getApplicationContext(),AddPlayerActivity.class);
                     startActivityForResult(i,0);
 
@@ -96,7 +96,7 @@ public class CreateTeam extends AppCompatActivity {
                 String username = data.getStringExtra("username");
                 AddPlayer player = new AddPlayer(name,username);
                 addPlayersAdapter.add(player);
-                Constants.teamMembers +=1;
+                Constants.cteamMembers +=1;
 
             } else if (resultCode == Activity.RESULT_CANCELED) {
 
@@ -107,7 +107,7 @@ public class CreateTeam extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Constants.teamMembers = 0;
+        Constants.cteamMembers = 0;
         super.onBackPressed();
     }
 }
