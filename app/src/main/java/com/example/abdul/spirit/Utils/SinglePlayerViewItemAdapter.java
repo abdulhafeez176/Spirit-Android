@@ -45,13 +45,21 @@ public class SinglePlayerViewItemAdapter extends ArrayAdapter<AddPlayer> {
         playerNameView.setText(addPlayerItem.getName());
         ImageView removePlayer = addPlayerView.findViewById(R.id.removePlayerButton);
 
-        removePlayer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SinglePlayerViewItemAdapter.this.remove(getItem(position));
-                Constants.teamMembers -=1;
-            }
-        });
+        if (position == 0){
+            removePlayer.setVisibility(View.GONE);
+
+        }
+        else {
+
+            removePlayer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    SinglePlayerViewItemAdapter.this.remove(getItem(position));
+                    Constants.teamMembers -= 1;
+                }
+            });
+
+        }
 
         return addPlayerView;
 
