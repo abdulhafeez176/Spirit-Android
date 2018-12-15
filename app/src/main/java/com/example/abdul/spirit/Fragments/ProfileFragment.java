@@ -12,9 +12,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.abdul.spirit.CreateTeam.CreateTeam;
 import com.example.abdul.spirit.LoginAndRegistration.LoginActivity;
 import com.example.abdul.spirit.LoginAndRegistration.RegisterActivity;
 import com.example.abdul.spirit.Modules.MainActivity;
@@ -33,6 +35,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private String mParam2;
     private AppCompatButton btn;
     private TextView profile_name_user,profile_user_age,profile_user_role,profile_user_username,profile_user_contact;
+    private Button registerButton;
 
     private String name_of_user,role_of_user,username_of_user,contact_of_user,age_of_user;
 
@@ -70,7 +73,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             contact_of_user = SharedPrefManager.getInstance(getContext()).getUserContact();
             isOwner = SharedPrefManager.getInstance(getContext()).userHasTeam();
 
+
+
         }
+
+
     }
 
     @Override
@@ -86,6 +93,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         profile_user_contact = view.findViewById(R.id.profile_user_contact);
         profile_user_username = view.findViewById(R.id.profile_user_username);
         btn = (AppCompatButton)view.findViewById(R.id.profile_register_team);
+        registerButton = view.findViewById(R.id.profile_register_team);
+
 
         profile_name_user.setText(name_of_user);
         profile_user_age.setText(age_of_user);
@@ -104,6 +113,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         }
 
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(),CreateTeam.class);
+                startActivity(i);
+            }
+        });
 
         return view;
 
