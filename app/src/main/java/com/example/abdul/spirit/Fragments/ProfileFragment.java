@@ -9,9 +9,11 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.abdul.spirit.CreateTeam.CreateTeam;
 import com.example.abdul.spirit.LoginAndRegistration.LoginActivity;
 import com.example.abdul.spirit.LoginAndRegistration.RegisterActivity;
 import com.example.abdul.spirit.Modules.MainActivity;
@@ -31,6 +33,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private AppCompatButton btn;
     private String name_of_user;
     private TextView name_user;
+    private Button registerNewTeamButton;
 
 
     public ProfileFragment() {
@@ -69,6 +72,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         name_user = view.findViewById(R.id.name_user_view);
         name_user.setText(name_of_user);
+        registerNewTeamButton = view.findViewById(R.id.registerNewTeamButton);
+
+        registerNewTeamButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(),CreateTeam.class);
+                startActivity(i);
+            }
+        });
 
         return view;
 

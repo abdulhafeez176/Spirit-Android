@@ -171,9 +171,12 @@
 
 
         <ListView
+            android:layout_marginTop="40dp"
             android:id="@+id/addPlayerslist"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="100dp"
             android:drawSelectorOnTop="false"
             />
 

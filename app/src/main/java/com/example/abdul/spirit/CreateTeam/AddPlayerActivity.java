@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.abdul.spirit.R;
@@ -12,7 +13,7 @@ import com.example.abdul.spirit.R;
 public class AddPlayerActivity extends AppCompatActivity {
 
     private Button addPlayerButton;
-    private TextView playerUsernameView;
+    private EditText playerUsernameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
