@@ -50,6 +50,16 @@
             tools:text="Description" />
 
 
+        <ImageView
+            android:id="@+id/removePlayerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:gravity="top"
+            android:src="@drawable/round_clear_black_48dp" />
+
+
     </RelativeLayout>
 
 
