@@ -29,7 +29,7 @@ public class AddPlayerActivity extends AppCompatActivity {
                 String userName = playerUsernameView.getText().toString().trim();
                 Intent i = new Intent();
                 i.putExtra("username",userName);
-                i.putExtra("Name","ToBeAddedLater");
+                i.putExtra("name","ToBeAddedLater");
                 setResult(RESULT_OK,i);
                 finish();
 
