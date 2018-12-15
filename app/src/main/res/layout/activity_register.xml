@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/splashScreenBackgroung"
-    tools:context=".LoginAndRegistration.LoginActivity"
-    tools:layout_editor_absoluteY="25dp">
+    android:background="@color/splashScreenBackgroung">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="143dp"
         android:layout_height="63dp"
-        android:layout_marginStart="121dp"
-        android:layout_marginLeft="121dp"
-        android:layout_marginTop="75dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:src="@drawable/newlogo4"
-
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         style="@style/loginScreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/imageView"
-        android:orientation="vertical"
+        android:layout_marginTop="8dp"
 
-        >
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -45,10 +45,10 @@
                 android:id="@+id/reg_name_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="NAME"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
                 android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="NAME"
                 android:inputType="text"
                 android:textColor="#ffffff" />
         </android.support.design.widget.TextInputLayout>
@@ -64,10 +64,10 @@
                 android:id="@+id/reg_email_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="USERNAME"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
                 android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="USERNAME"
                 android:inputType="text"
                 android:textColor="#ffffff" />
         </android.support.design.widget.TextInputLayout>
@@ -77,18 +77,56 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:hintAnimationEnabled="false"
+            android:layout_marginBottom="8dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/reg_age_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="AGE"
+                android:inputType="text"
+                android:textColor="#ffffff" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/reg_role_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="PLAYING ROLE"
+                android:inputType="text"
+                android:textColor="#ffffff" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="8dp"
+            app:hintAnimationEnabled="false"
             app:passwordToggleEnabled="true">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/reg_pass_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="PASSWORD"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="PASSWORD"
                 android:inputType="textPassword"
                 android:textColor="#ffffff" />
         </android.support.design.widget.TextInputLayout>
@@ -98,18 +136,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:hintAnimationEnabled="false"
             android:layout_marginBottom="8dp"
+            app:hintAnimationEnabled="false"
             app:passwordToggleEnabled="true">
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/reg_confirm_pass_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="CONFIRM PASSWORD"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="CONFIRM PASSWORD"
                 android:inputType="textPassword"
                 android:textColor="#ffffff" />
         </android.support.design.widget.TextInputLayout>
@@ -134,25 +172,27 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="90dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="bottom"
+        android:layout_marginBottom="6dp"
         android:text="Already have Account?"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reg_button_login"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/reg_button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/textView2"
-        android:gravity="bottom"
+        android:layout_marginBottom="6dp"
         android:text="Login"
         android:textColor="#ffffff"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

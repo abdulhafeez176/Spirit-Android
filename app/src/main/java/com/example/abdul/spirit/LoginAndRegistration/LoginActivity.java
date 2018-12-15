@@ -72,12 +72,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if (SharedPrefManager.getInstance(this).isLoggedIn()){
-            finish();
-//            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-            return;
-
-        }
 
 
 
@@ -107,7 +101,11 @@ public class LoginActivity extends AppCompatActivity {
                                                     obj.getInt("id"),
                                                     obj.getString("username"),
                                                     obj.getString("name"),
+                                                    obj.getInt("age"),
+                                                    obj.getString("role"),
+                                                    obj.getString("contact"),
                                                     obj.getInt("teamowner")
+
                                             );
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     finish();

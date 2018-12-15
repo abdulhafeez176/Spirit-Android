@@ -15,8 +15,10 @@ public class SharedPrefManager {
     public static final String KEY_USERNAME = "username";
     public static final String KEY_ID = "userid";
     public static final String KEY_NAME = "name";
+    public static final String KEY_AGE = "age";
+    public static final String KEY_ROLE = "role";
     public static final String KEY_OWNER = "owner";
-
+    public static final String KEY_CONTACT = "contact";
 
     private SharedPrefManager(Context context) {
         mCtx = context;
@@ -31,13 +33,16 @@ public class SharedPrefManager {
         return mInstance;
     }
 
-    public boolean userLogin(int id,String username,String name,int owner){
+    public boolean userLogin(int id,String username,String name,int age,String role,String contact,int owner){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putInt(KEY_ID,id);
         editor.putString(KEY_USERNAME,username);
         editor.putString(KEY_NAME,name);
+        editor.putInt(KEY_AGE,age);
+        editor.putString(KEY_ROLE,role);
+        editor.putString(KEY_CONTACT,contact);
         editor.putInt(KEY_OWNER,owner);
         editor.apply();
 
@@ -70,6 +75,24 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_NAME,"NAME");
     }
+
+    public int getageOfUser(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(KEY_AGE,18);
+    }
+    public String getroleOfUser(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_ROLE,"None");
+    }
+    public int userHasTeam(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(KEY_OWNER,2);
+    }
+    public String getUserContact(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_CONTACT,"Not Provided");
+    }
+
 
 
 

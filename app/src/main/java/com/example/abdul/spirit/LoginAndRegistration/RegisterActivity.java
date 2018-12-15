@@ -29,7 +29,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     // activity vars
-    private AppCompatEditText reg_username,reg_password,reg_conf_pass,reg_name;
+    private AppCompatEditText reg_username,reg_password,reg_conf_pass,reg_name,reg_age,reg_role;
     private AppCompatButton reg_btn_reg;
     private TextView reg_button_log;
     private ProgressDialog progressDialog;
@@ -46,6 +46,8 @@ public class RegisterActivity extends AppCompatActivity {
         reg_btn_reg = (AppCompatButton)findViewById(R.id.reg_button_register);
         reg_button_log = (TextView)findViewById(R.id.reg_button_login);
         reg_name = (AppCompatEditText)findViewById(R.id.reg_name_edit);
+        reg_age = (AppCompatEditText)findViewById(R.id.reg_age_edit);
+        reg_role = (AppCompatEditText)findViewById(R.id.reg_role_edit);
         progressDialog = new ProgressDialog(this);
 
         reg_button_log.setOnClickListener(new View.OnClickListener() {
@@ -78,9 +80,12 @@ public class RegisterActivity extends AppCompatActivity {
         final String username = reg_username.getText().toString().trim();
         final String password = reg_password.getText().toString().trim();
         final String name = reg_name.getText().toString().trim();
+        final String age = reg_age.getText().toString().trim();
+        final String role = reg_role.getText().toString().trim();
 
 
-        if (!confirmPass.isEmpty() && !username.isEmpty() && !password.isEmpty() && !name.isEmpty()){
+
+        if (!confirmPass.isEmpty() && !username.isEmpty() && !password.isEmpty() && !name.isEmpty() && !age.isEmpty() && !role.isEmpty()){
 
             if(password.equals(confirmPass)){
                 progressDialog.setMessage("Registering user...");
@@ -116,6 +121,8 @@ public class RegisterActivity extends AppCompatActivity {
                         params.put("username", username);
                         params.put("password", password);
                         params.put("name",name);
+                        params.put("age",age);
+                        params.put("role",role);
                         return params;
                     }
                 };
