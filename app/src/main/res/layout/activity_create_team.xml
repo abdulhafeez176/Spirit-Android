@@ -167,31 +167,7 @@
                 android:textColor="#000000" />
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/loginScreen"
 
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            app:passwordToggleEnabled="true">
-
-            <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/new_team_member"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/loginScreen"
-
-                android:hint="Email"
-                android:drawablePadding="5dp"
-                android:drawableLeft="@mipmap/baseline_alternate_email_black_18dp"
-                android:drawableStart="@mipmap/baseline_alternate_email_black_18dp"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/splashScreenBackgroung"
-                android:textColor="#000000" />
-        </android.support.design.widget.TextInputLayout>
 
 
         <ListView
