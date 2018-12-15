@@ -17,6 +17,19 @@
 
 
 
+
+    </style>
+
+    <style name="createTeam">
+
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">#ffffff</item>
+        <item name="colorAccent">#ffffff</item>
+        <item name="android:textColorHint">#ffffff</item>
+
+
+
+
     </style>
 
 
